@@ -2,9 +2,8 @@
 from tkinter import *
 from random import randrange
 # --- définition des fonctions gestionnaires d'événements : ---
-def drawline():
+def drawline( x1, y1, x2, y2):
     "Tracé d'une ligne dans le canevas can1"
-    global x1, y1, x2, y2, coul
     ## 2 - modifier le programme pour que toutes les lignes tracées soient horizontales et parallèles
     can1.create_line(x1,y1,x2,y2,width=2,fill=coul)
     #(x1,y1) : position de départ
@@ -17,9 +16,14 @@ def drawline():
 l’une horizontale et l’autre verticale. Ajoutez également un bouton portant l’indication « viseur ». Un clic sur ce bouton devra provoquer l’affichage de la croix.
 '''
 def drawline2():
-    "Tracé d'une ligne dans le canevas can1"
+    '''
+    ## 5 -
+    Reprenez le programme initial. Remplacez la méthode create_line par create_rectangle. Que se passe-t-il ?
+    '''
     can1.create_line(250,0,250,650,width=2,fill="red")
-    can1.create_line(0,250,600,250,width=2,fill="red")
+    can1.create_rectangle(50,50,150,150,width=2)
+    can1.create_arc(50,50,300,300, width=2)
+    can1.create_oval(100,10,250,150,width=2)
 
 def changecolor():
     "Changement aléatoire de la couleur du tracé"
@@ -32,7 +36,7 @@ def changecolor():
 #------ Programme principal -------
 
 # les variables suivantes seront utilisées de manière globale :
-x1, y1, x2, y2 = 0, 10, 650, 10 # coordonnées de la ligne
+x1, y1, x2, y2 =  10, 390, 390, 10 # coordonnées de la ligne
 
 coul = 'dark green' # couleur de la ligne
 
@@ -52,7 +56,7 @@ bou1.pack(side=BOTTOM)
 ## 4 - Ajout du boutton viseur
 bou4 = Button(fen1,text='Viseur',command=drawline2)
 bou4.pack()
-bou2 = Button(fen1,text='Tracer une ligne',command=drawline)
+bou2 = Button(fen1,text='Tracer une ligne',command=drawline(x1, y1, x2, y2))
 bou2.pack()
 bou3 = Button(fen1,text='Autre couleur',command=changecolor)
 bou3.pack()
