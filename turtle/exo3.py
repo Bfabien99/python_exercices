@@ -21,22 +21,19 @@ def carre(taille):
         right(90)
         c += 1
     
-def triangle(taille, couleur):
+def triangle(taille):
     c = 0
     while c < 3:
-        color(couleur)
+        color("blue")
         forward(taille)
         right(120)
         c += 1
 
 def etoile6(taille):
-    triangle(taille, "red")
+    triangle(taille)
     forward(taille)
+    up()
+    goto(taille, -taille/2)
+    down()
     right(180)
-    triangle(taille, "blue")
-    
-
-taille = 20
-
-etoile6(taille)
-etoile6(taille)
+    triangle(taille)
