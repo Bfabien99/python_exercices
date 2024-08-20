@@ -11,10 +11,15 @@ def carre(x1, y1, x2,color="blue"):
 
 def draw_circle():
     draw_pan()
+    pion = 0
+    limit = random.randint(1,61)
     for i in range(0, 181, 20):
         for j in range(0, 181, 20):
             f = random.randint(0,1)
-            cercle(j+10, i+10, 5) if f else None
+            if f and pion < limit:
+                cercle(j+10, i+10, 5)
+                pion += 1
+    print("Il y a", pion,"pion(s) sur le damier.")
 
 def draw_pan():
     # x1 = 0
@@ -28,7 +33,8 @@ def draw_pan():
             else:
                 carre(j, i, j+20, "ivory")
             b = not b
-                
+    
+    
 fen = Tk()
 can = Canvas(fen, width =200, height =200, bg ='ivory')
 can.pack(side =TOP, padx =5, pady =5)
