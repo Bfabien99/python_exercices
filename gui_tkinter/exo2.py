@@ -6,6 +6,7 @@ from tkinter import *
 
 tk = Tk()
 
+## dessiner tous les anneaux
 def draw_rings():
     global canva
     canva.create_oval(50, 100, 100, 150, width=5, outline="blue")
@@ -17,22 +18,27 @@ def draw_rings():
 '''
 b) Modifiez le programme ci-dessus en y ajoutant 5 boutons. Chacun de ces boutons provoquera le tracé de chacun des 5 anneaux
 '''
+## dessiner anneau bleu
 def draw_ring_blue():
     global canva
     canva.create_oval(50, 100, 100, 150, width=5, outline="blue")
 
+## dessiner anneau jaune
 def draw_ring_yellow():
     global canva
     canva.create_oval(75, 130, 125, 180, width=5, outline="yellow")
 
+## dessiner anneau noir
 def draw_ring_black():
     global canva
     canva.create_oval(102, 100, 152, 150, width=5, outline="black")
 
+## dessiner anneau vert
 def draw_ring_green():
     global canva
     canva.create_oval(127, 130, 177, 180, width=5, outline="green")
 
+## dessiner anneau rouge
 def draw_ring_red():
     global canva
     canva.create_oval(154, 100, 204, 150, width=5, outline="red")
@@ -52,15 +58,19 @@ btn_all.pack()
 ## affichage anneau blue
 btn_blue = Button(tk, text="blue", bg="blue", fg="white", command=draw_ring_blue)
 btn_blue.pack()
+
 ## affichage anneau yellow
 btn_yellow = Button(tk, text="yellow", bg="yellow", fg="black", command=draw_ring_yellow)
 btn_yellow.pack()
+
 ## affichage anneau black
 btn_black = Button(tk, text="black", bg="black", fg="white", command=draw_ring_black)
 btn_black.pack()
+
 ## affichage anneau green
 btn_green = Button(tk, text="green", bg="green", fg="white", command=draw_ring_green)
 btn_green.pack()
+
 ## affichage anneau red
 btn_red = Button(tk, text="red", bg="red", fg="white", command=draw_ring_red)
 btn_red.pack()
